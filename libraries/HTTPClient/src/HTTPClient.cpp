@@ -376,6 +376,46 @@ int HTTPClient::sendRequest(const char * type, String payload)
 /**
  * sendRequest
  * @param type const char *     "GET", "POST", ....
+ * @param type const char *     "/URI"
+ * @param payload uint8_t *     data for the message body if null not send
+ * @param size size_t           size for the message body if 0 not send
+ * @return -1 if no info or > 0 when Content-Length is set by server
+ */
+int HTTPClient::sendRequest(const char * type, uint8_t * uri,uint8_t * payload, size_t size)
+{
+    Serial.printf("[HTTP-Client][sendRequest] switch uri <%s> to <%s>\n",_uri.c_str(),uri);
+    _uri = String((char *)uri);
+    
+    // connect to server
+    if(!connect()) {
+        return returnError(HTTPC_ERROR_CONNECTION_REFUSED);
+    }
+
+    if(payload && size > 0) {
+        addHeader(F("Content-Length"), String(size));
+    }
+
+    // send Header
+    if(!sendHeader(type)) {
+        return returnError(HTTPC_ERROR_SEND_HEADER_FAILED);
+    }
+
+    // send Payload if needed
+    if(payload && size > 0) {
+        if(_tcp->write(&payload[0], size) != size) {
+            return returnError(HTTPC_ERROR_SEND_PAYLOAD_FAILED);
+        }
+    }
+
+    // handle Server Response (Header)
+    return returnError(handleHeaderResponse());
+}
+
+
+
+/**
+ * sendRequest
+ * @param type const char *     "GET", "POST", ....
  * @param payload uint8_t *     data for the message body if null not send
  * @param size size_t           size for the message body if 0 not send
  * @return -1 if no info or > 0 when Content-Length is set by server
