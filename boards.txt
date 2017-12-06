@@ -528,6 +528,61 @@ node32s.build.flash_size=4MB
 node32s.build.boot=dio
 node32s.build.partitions=default
 
+
+## node32s.menu.Debug.Disabled=Disabled
+## node32s.menu.Debug.Disabled.build.debug_port=
+## node32s.menu.Debug.Serial=Serial
+## node32s.menu.Debug.Serial.build.debug_port=-DDEBUG_ESP_PORT=Serial
+## node32s.menu.Debug.Serial1=Serial1
+## node32s.menu.Debug.Serial1.build.debug_port=-DDEBUG_ESP_PORT=Serial1
+## 
+## node32s.menu.DebugLevel.None____=None
+## node32s.menu.DebugLevel.None____.build.debug_level=
+## node32s.menu.DebugLevel.Core____=Core
+## node32s.menu.DebugLevel.Core____.build.debug_level=-DDEBUG_ESP_CORE
+## node32s.menu.DebugLevel.SSL_____=Core + SSL
+## node32s.menu.DebugLevel.SSL_____.build.debug_level=-DDEBUG_ESP_CORE -DDEBUG_ESP_SSL
+## node32s.menu.DebugLevel.SSL_MEM_=Core + SSL + TLS Mem
+## node32s.menu.DebugLevel.SSL_MEM_.build.debug_level=-DDEBUG_ESP_CORE -DDEBUG_ESP_SSL -DDEBUG_TLS_MEM
+## node32s.menu.DebugLevel.WiFic___=Core + WiFi
+## node32s.menu.DebugLevel.WiFic___.build.debug_level=-DDEBUG_ESP_CORE -DDEBUG_ESP_WIFI
+## node32s.menu.DebugLevel.WiFi____=WiFi
+## node32s.menu.DebugLevel.WiFi____.build.debug_level=-DDEBUG_ESP_WIFI
+## node32s.menu.DebugLevel.HTTPClient=HTTPClient
+## node32s.menu.DebugLevel.HTTPClient.build.debug_level=-DDEBUG_ESP_HTTP_CLIENT
+## node32s.menu.DebugLevel.HTTPClient2=HTTPClient + SSL
+## node32s.menu.DebugLevel.HTTPClient2.build.debug_level=-DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_SSL
+## node32s.menu.DebugLevel.HTTPUpdate=HTTPUpdate
+## node32s.menu.DebugLevel.HTTPUpdate.build.debug_level=-DDEBUG_ESP_HTTP_UPDATE
+## node32s.menu.DebugLevel.HTTPUpdate2=HTTPClient + HTTPUpdate
+## node32s.menu.DebugLevel.HTTPUpdate2.build.debug_level=-DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_HTTP_UPDATE
+## node32s.menu.DebugLevel.HTTPUpdate3=HTTPClient + HTTPUpdate + Updater
+## node32s.menu.DebugLevel.HTTPUpdate3.build.debug_level=-DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_UPDATER
+## node32s.menu.DebugLevel.HTTPServer=HTTPServer
+## node32s.menu.DebugLevel.HTTPServer.build.debug_level=-DDEBUG_ESP_HTTP_SERVER
+## node32s.menu.DebugLevel.UPDATER=Updater
+## node32s.menu.DebugLevel.UPDATER.build.debug_level=-DDEBUG_ESP_UPDATER
+## node32s.menu.DebugLevel.OTA_____=OTA
+## node32s.menu.DebugLevel.OTA_____.build.debug_level=-DDEBUG_ESP_OTA
+## node32s.menu.DebugLevel.OTA2____=OTA + Updater
+## node32s.menu.DebugLevel.OTA2____.build.debug_level=-DDEBUG_ESP_OTA -DDEBUG_ESP_UPDATER
+## node32s.menu.DebugLevel.all_____=All
+## node32s.menu.DebugLevel.all_____.build.debug_level=-DDEBUG_ESP_CORE -DDEBUG_ESP_SSL -DDEBUG_ESP_WIFI -DDEBUG_ESP_HTTP_CLIENT -DDEBUG_ESP_HTTP_UPDATE -DDEBUG_ESP_HTTP_SERVER -DDEBUG_ESP_UPDATER -DDEBUG_ESP_OTA -DDEBUG_TLS_MEM
+
+
+node32s.menu.DebugLevel.none=None
+node32s.menu.DebugLevel.none.build.code_debug=0
+node32s.menu.DebugLevel.error=Error
+node32s.menu.DebugLevel.error.build.code_debug=1
+node32s.menu.DebugLevel.warn=Warn
+node32s.menu.DebugLevel.warn.build.code_debug=2
+node32s.menu.DebugLevel.info=Info
+node32s.menu.DebugLevel.info.build.code_debug=3
+node32s.menu.DebugLevel.debug=Debug
+node32s.menu.DebugLevel.debug.build.code_debug=4
+node32s.menu.DebugLevel.verbose=Verbose
+node32s.menu.DebugLevel.verbose.build.code_debug=5
+
 node32s.menu.FlashFreq.80=80MHz
 node32s.menu.FlashFreq.80.build.flash_freq=80m
 node32s.menu.FlashFreq.40=40MHz
